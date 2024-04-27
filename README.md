@@ -50,8 +50,8 @@ public class SearchStepDefinitions {
 Create ExcelReader Class:
 Create a new Java class ExcelReader.java in the src/main/java directory.
 Add the code to read test data from the Excel file:
+![image](https://github.com/shindenikhil659/mock-worldline-task1/assets/95039067/48337e32-0032-4fe7-a20a-544ae7427c01)
 
-![image](https://github.com/shindenikhil659/mock-worldline-task1/assets/95039067/e80abe0e-4bd3-4434-856a-248fd11ed52d)
 
 
 Implement Test Runner Class:
