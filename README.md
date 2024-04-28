@@ -1,77 +1,34 @@
 # mock-worldline-task1
 
-Create a Maven Project:
-Open Eclipse and create a new Maven project.
-Select "Create a simple project" and click "Next".
-Enter Group Id and Artifact Id, then click "Finish".
-Add Dependencies to pom.xml:
-Open the pom.xml file of your Maven project.
-Add the dependencies for Cucumber, Apache POI, and Selenium WebDriver:
+1.Create Maven Project in Eclipse:
+Open Eclipse and select "File" > "New" > "Maven Project".
+Choose "Create a simple project" and click "Next".
+Enter Group Id: com.example and Artifact Id: ecommerce-search-testing.
+Click "Finish" to create the project.
 
-![image](https://github.com/shindenikhil659/mock-worldline-task1/assets/95039067/6f56023f-7bf0-4f27-a2ad-9fc4b2cdb053)
+2.Add Dependencies:
+Open the pom.xml file and add the following dependencies:
+xml
+![Screenshot (1639)](https://github.com/shindenikhil659/mock-worldline-task1/assets/95039067/1bf40658-5c1d-4284-9557-76f999e6f772)
 
-Create Feature File:
-Create a new feature file search.feature in the src/test/resources directory.
-Add the following content to the file:
-
-![image](https://github.com/shindenikhil659/mock-worldline-task1/assets/95039067/4aa59cdc-241a-4855-b746-757d6e6933de)
-
-Create Step Definitions:
-Create a new Java class SearchStepDefinitions.java in the src/test/java directory.
-Add the step definitions code:
-
-import io.cucumber.java.en.Given;
-import io.cucumber.java.en.Then;
-import io.cucumber.java.en.When;
-
-public class SearchStepDefinitions {
-    @Given("I am on the home page")
-    public void iAmOnTheHomePage() {
-        System.out.println("Navigating to the home page...");
-        // Code to navigate to the home page
-    }
-
-    @When("I search for {string}")
-    public void iSearchForProduct(String product) {
-        System.out.println("Searching for product: " + product);
-        // Code to perform the search using the given product
-    }
-
-    @Then("I should see search results for {string}")
-    public void iShouldSeeSearchResultsForProduct(String product) {
-        System.out.println("Verifying search results for product: " + product);
-        // Code to verify search results for the given product
-    }
-}
+3. Create Feature File:
+Right-click on the "src/test/resources" folder and select "New" > "File".
+Name the file "search.feature" and add the following content
 
 
+![Screenshot (1641)](https://github.com/shindenikhil659/mock-worldline-task1/assets/95039067/3c8918ca-3941-45a7-8a62-4844ee435a8f)
 
+4.Create Step Definitions:
+Right-click on the "src/test/java" folder and create a package named "stepDefinitions".
+Inside the "stepDefinitions" package, create a Java class named "SearchSteps" 
+Read Data from Excel:
+Right-click on the "src/test/resources" folder and create a new folder named "testdata".
+Place the Excel file with the test data (e.g., "products.xlsx") inside the "testdata" folder.
+Add the Apache POI library for Excel to the project's build path.
+Modify Step Definitions to Read from Excel:
+Modify the SearchSteps class to read test data from the Excel file:
+java
+![image](https://github.com/shindenikhil659/mock-worldline-task1/assets/95039067/588e933d-ff1b-4373-93fc-00506644340d)
 
-Create ExcelReader Class:
-Create a new Java class ExcelReader.java in the src/main/java directory.
-Add the code to read test data from the Excel file:
-![image](https://github.com/shindenikhil659/mock-worldline-task1/assets/95039067/48337e32-0032-4fe7-a20a-544ae7427c01)
+![image](https://github.com/shindenikhil659/mock-worldline-task1/assets/95039067/91253e04-3e44-45c9-af2a-041b0941874d)
 
-
-
-Implement Test Runner Class:
-Create a new Java class TestRunner.java in the src/test/java directory.
-Add the code to execute the Cucumber tests:
-
-import io.cucumber.junit.Cucumber;
-import io.cucumber.junit.CucumberOptions;
-import org.junit.runner.RunWith;
-
-@RunWith(Cucumber.class)
-@CucumberOptions(
-    features = "src/test/resources",
-    glue = "stepdefinitions"
-)
-public class TestRunner {
-}
-
-
-
-Run the Test:
-Right-click on TestRunner.java.
-Select "Run As" -> "JUnit Test".
